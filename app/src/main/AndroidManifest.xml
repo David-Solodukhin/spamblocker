@@ -21,13 +21,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <service android:name="com.dukhin.callblockingtestdemo.CallScreenImpl"
             android:permission="android.permission.BIND_SCREENING_SERVICE">
             <intent-filter>
                 <action android:name="android.telecom.CallScreeningService"/>
             </intent-filter>
         </service>
+
     </application>
 
 </manifest>

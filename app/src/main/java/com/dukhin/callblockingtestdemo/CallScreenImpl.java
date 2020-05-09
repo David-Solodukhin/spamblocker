@@ -21,6 +21,7 @@ public class CallScreenImpl extends CallScreeningService {
         String number = callDetails.getHandle().toString();
         number = number.substring(number.indexOf(":") + 1);
         TelecomManager telecomManager = (TelecomManager) getSystemService(TELECOM_SERVICE);
+        //telecomManager.accept
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
             return;
         }
@@ -36,12 +37,14 @@ public class CallScreenImpl extends CallScreeningService {
             number = number.substring(number.length()-10);
         }
         //Log.d("yolo", number + " " + baseNum);
+
         if (number.startsWith(baseNum.substring(0,7)) && !number.equals(baseNum)) {
             CallResponse.Builder builder = new CallResponse.Builder();
             builder.setDisallowCall(true);
             builder.setRejectCall(true);
             builder.setSkipCallLog(true);
             builder.setSkipNotification(true);
+
             respondToCall(callDetails,  builder.build());
             //Toast.makeText(this.getApplicationContext(), "ended Call from: " + number +"to: " + baseNum, Toast.LENGTH_SHORT).show();
 

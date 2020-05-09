@@ -1,2 +1,3 @@
-# Android API 29+ app to block phone calls from #s that impersonate your phone number prefix.
-i.e. the app will block calls from 123-456-7890 if your phone # is 123-456-1111
+# Android API 29+ app to block calls from #s that impersonate your phone number prefix.
+i.e. the app will block calls from ABC-DEF-XXXX if your phone number starts with ABC-DEF (first 6 numbers match).
+TODO: prevent robocalls from leaving a voicemail by stealth accepting the call in the background and immediately ending it.
